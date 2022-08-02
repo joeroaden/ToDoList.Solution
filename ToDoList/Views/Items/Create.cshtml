@@ -8,12 +8,17 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+    @Html.Label("Select category")
+    @Html.DropDownList("CategoryId")
 
-  <input type="submit" value="Add new item" class="btn btn-default" />
+    @Html.Label("Enter Due Date (YYYY-MM-DD" )
+    @Html.TextBoxFor(model => model.DueDate)
+
+    @* <input id="dateInput" type="date" width="10" class="date" name="dateInput"/> *@
+
+    <input type="submit" value="Add new item" class="btn btn-default"/>
 }
 <p>@Html.ActionLink("Show all items", "Index")</p>
